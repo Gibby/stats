@@ -12,6 +12,10 @@ on:
       - '.swiftlint.yml'
       - '**/*.swift'
 
+concurrency:
+  group: linter-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   linter:
     runs-on: ubuntu-latest
