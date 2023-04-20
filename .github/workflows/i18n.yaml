@@ -10,10 +10,6 @@ on:
       - '.github/workflows/i18n.yaml'
       - '**/*.strings'
 
-concurrency:
-  group: i18n-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   i18n:
     runs-on: ubuntu-latest

@@ -1,4 +1,4 @@
-name: linter
+name: Linter
 
 on:
   push:
@@ -12,16 +12,10 @@ on:
       - '.swiftlint.yml'
       - '**/*.swift'
 
-concurrency:
-  group: linter-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  linter:
+  SwiftLint:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
       - uses: norio-nomura/action-swiftlint@3.2.1
-        with:
-          args: --output reports/swiftlint.json
